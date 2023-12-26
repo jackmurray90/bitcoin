@@ -1,0 +1,56 @@
+
+<style>
+  body { text-align: center; font-size: xx-large; }
+  div { margin: 1em auto 0 auto; max-width: 30em; }
+  div.chart { max-width: 10em; }
+  hr { margin-top: 1em; }
+</style>
+
+<div>
+  As of July 2023, it's estimated that the entire value of all the gold ever
+  mined is around $12.25 trillion. In contrast, the overall market cap for
+  bitcoin is roughly $850 billion.
+  <hr/>
+</div>
+
+<div>
+  <div class="chart">
+    <canvas id="myChart"></canvas>
+  </div>
+  <hr/>
+</div>
+
+<div>
+  <small>
+  Bitcoin has all the desirable properties of gold that make it suitable for
+  money, plus some even more desirable properties such as the ability to
+  transfer it instantly internationally and total scarcity. I personally
+  believe a fair valuation would see Bitcoin valued closer to gold, if not more
+  than gold.
+  </small>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Bitcoin', 'Gold'],
+      datasets: [{
+        label: 'Market cap (billions)',
+        data: [850, 12250],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
