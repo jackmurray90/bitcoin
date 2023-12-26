@@ -8,9 +8,52 @@
   .material-symbols-outlined { vertical-align: middle; }
   table { border-collapse: collapse; margin: 0 auto; }
   td { padding: 0 1em; border: 1px solid #999; }
+  div { font-size: xx-large; margin: 1em auto 0 auto; max-width: 30em; }
+  div.chart { max-width: 10em; }
 </style>
 
-<span class="key material-symbols-outlined">home</span> = $1,000,000
+<div>
+  It's estimated that the entire value of all the houses on earth is about $827
+  trillion. In contrast, the overall market cap for bitcoin is roughly $850
+  billion.
+  <hr/>
+  Let's assume Bitcoin is 100 times less useful than a house, so here we
+  present a chart with 1/100th the market cap of housing.
+</div>
+
+<div>
+  <div class="chart">
+    <canvas id="myChart"></canvas>
+  </div>
+  <hr/>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Bitcoin', 'Housing/100'],
+      datasets: [{
+        label: 'Market cap (billions)',
+        data: [850, 8272.81],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+<span class="key material-symbols-outlined">home</span> = $1,000,000 USD
 
 <table>
   <tr><td>January 2015</td><td><span class="material-symbols-outlined">home</span> = 3121 BTC</td></tr>
@@ -22,10 +65,10 @@
   <tr><td>January 2021</td><td><span class="material-symbols-outlined">home</span> = 34.5 BTC</td></tr>
   <tr><td>January 2022</td><td><span class="material-symbols-outlined">home</span> = 21.6 BTC</td></tr>
   <tr><td>January 2023</td><td><span class="material-symbols-outlined">home</span> = 60.5 BTC</td></tr>
-  <tr><td>January 2024</td><td><span class="material-symbols-outlined">home</span> = ? BTC</td></tr>
+  <tr><td>January 2024</td><td><span class="material-symbols-outlined">home</span> = 23 BTC</td></tr>
   <tr><td>January 2025</td><td><span class="material-symbols-outlined">home</span> = ? BTC</td></tr>
   <tr><td>January 2026</td><td><span class="material-symbols-outlined">home</span> = ? BTC</td></tr>
   <tr><td>January 2027</td><td><span class="material-symbols-outlined">home</span> = ? BTC</td></tr>
-  <tr><td>January 2028</td><td><span class="material-symbols-outlined">home</span> = ? BTC (my guess: 5)</td></tr>
+  <tr><td>January 2028</td><td><span class="material-symbols-outlined">home</span> = ? BTC</td></tr>
+  <tr><td>January 2029</td><td><span class="material-symbols-outlined">home</span> = ? BTC (my guess, 4 BTC)</td></tr>
 </table>
-
